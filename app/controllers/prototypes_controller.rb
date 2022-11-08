@@ -55,9 +55,7 @@ class PrototypesController < ApplicationController
   end
 
   def contributor_confirmation
-    unless user_signed_in?
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user == @prototype.user
   end
 end
 
